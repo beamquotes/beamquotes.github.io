@@ -1,0 +1,26 @@
+{% include header.html %}
+
+<div class="container">
+  <div class="profile" style="margin-bottom: 0;">
+    <a href="{{ site.url }}"><img src="{{site.author.picture}}" class="profile-image"></a>
+    <div class="profile-about">
+	  <br/>
+      <div class="mode" id="mode-switcher" onclick="toggleNightMode();">
+        <span></span>
+      </div>
+      <br/>
+      <h2 style="margin-bottom: 0; font-weight: 700;">{{site.author.name}}</h2>
+      {% if site.author.twitter %}
+      <a href="https://twitter.com/{{site.author.twitter}}" target="_blank"><img src="assets/images/icon/twitter.svg" class="social-icon"></a>
+      {% endif %}
+      {% if site.author.github %}
+      <a href="https://github.com/{{site.author.github}}" target="_blank"><img src="assets/images/icon/github.svg" class="social-icon"></a>
+      {% endif %}
+      <br/>
+      {{ site.author.bio }}
+    </div>
+  </div>
+  {{ content }}
+</div>
+
+{% include footer.html %}

@@ -1,0 +1,14 @@
+---
+layout: default
+---
+
+<h1>BEAM quotes</h1>
+
+<div class="post-container">
+  {% for quote in site.data.quotes %}
+  <a href="{{ quote.source }}" target="_blank" class="post-list" style="display: block;">
+    <div class="post-title" style="width: 100%;">{{ quote.content }}</div>
+    <div class="post-date" style="width: 100%;">-- {{ quote.author }}</div>
+  </a>
+  {% endfor %}
+</div>

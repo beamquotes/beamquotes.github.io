@@ -1,0 +1,68 @@
+# Site settings
+site: BEAM quotes
+keywords: quotes, beam, erlang, elixir
+description: >-
+  Quotes about the BEAM, Erlang, Elixir, and concurrency.
+lang: en-US
+repo: https://github.com/beamquotes/beamquotes.github.io
+
+# Author settings
+author:
+  name: BEAM quotes
+  bio: Quotes about the BEAM,<br/>Erlang, Elixir, and concurrency.
+  picture: assets/images/profile.jpg 
+  github: beamquotes # github username
+  twitter: dwellmind # twitter username
+
+# URL settings
+url: "https://beamquotes.github.io"
+permalink: pretty
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+exclude:
+  - .jekyll-cache
+  - .obsidian
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE.md
+  - README.md
+  - CONTRIBUTING.md
+
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-relative-links
+paginate: 20
+paginate_path: "/page/:num"
+
+collections:
+  pages:
+    output: true
+    permalink: /:name
+  posts:
+    output: true
+    permalink: /:slug
+  
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+relative_links:
+  enabled:     true
+  collections: false
